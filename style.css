@@ -1,0 +1,548 @@
+/* 1. VARIÁVEIS E CONFIGURAÇÕES GERAIS */
+:root {
+    --bg-color: #0B0F1A;
+    --primary-color: #00F5A0; 
+    --secondary-color: #00D9E1; 
+    --text-main: #F8FAFC;
+    --text-dim: #94A3B8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at top right, rgba(0, 245, 160, 0.05), transparent 400px),
+                      radial-gradient(circle at bottom left, rgba(0, 217, 225, 0.05), transparent 400px);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6
+}
+
+/* 2. HEADER E NAVEGAÇÃO */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(11, 15, 26, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    color: var(--primary-color);
+}
+
+/* 3. ESTRUTURA DE LAYOUT */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 4. SEÇÃO HERO (BOAS-VINDAS) */
+.hero {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start; 
+
+}
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.nome {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* 5. BOTÕES */
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 245, 160, 0.3);
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-github:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-main);
+    transform: translateY(-3px);
+}
+
+.btn-github i {
+    font-size: 1.2rem;
+}
+
+
+
+/* 6. SEÇÃO SOBRE MIM  */
+.sobre-mim {
+    padding: 120px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-content {
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 50px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.sobre-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center  ;
+}
+
+
+.sobre-content h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 10px auto 0 auto; 
+}
+
+.texto-sobre p {
+    font-size: 20px;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+}   
+
+/* 7. SEÇÃO OBJETIVOS */
+.objetivos {
+    padding: 100px 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.02); 
+    text-align: center;
+    border-radius: 30px;
+}
+
+.objetivos h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.objetivos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 245, 160, 0.1);
+}
+
+.card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* 8. SEÇÃO ESCOLARIDADE */
+.escolaridade {
+    padding: 100px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+}
+
+.escolaridade h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.edu-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 5px solid var(--primary-color); 
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+    margin-left: 180px;
+}
+
+.edu-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.02);
+}
+
+.edu-info h3 {
+    color: var(--text-main);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.escola {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.serie {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+.edu-status {
+    text-align: right;
+}
+
+.tag {
+    background: rgba(0, 245, 160, 0.1);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.edu-status p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* Ajuste para celular */
+@media (max-width: 600px) {
+    .edu-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .edu-status {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 15px;
+        width: 100%;
+    }
+}
+
+/* Objetivos */
+
+.conhecimento {
+    padding: 50px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+}
+
+.conhecimento h1 {
+    color: var(--primary-color);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.conhecimento-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.conhecimento .card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 20px;
+    border-radius: 50px; 
+    width: auto; 
+    max-width: none;
+    transition: 0.3s;
+}
+
+.conhecimento .card h3 {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.conhecimento .card:hover {
+    background: rgba(0, 245, 160, 0.1);
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.card p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Animação simples de subida */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* projetos */
+
+.projeto-grid {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.projeto h1 {
+    align-self: center;
+    color: var(--primary-color);
+}
+
+.projetos h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-projeto1 {
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-projeto1:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 245, 160, 0.3);
+}
+
+.projeto-card {
+    max-width: 500px; 
+    width: 100%;
+    text-align: left ; 
+}
+
+.projeto-img {
+    width: 100%;
+    height: 250px; 
+    overflow: hidden; 
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projeto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top; 
+    transition: 0.5s;
+}
+
+
+.projeto-card:hover .projeto-img img {
+    transform: scale(1.05); 
+}   
+
+/* Estilo para a lista do projeto */
+.lista-info {
+    list-style-type: disc; 
+    padding-left: 25px;    
+    margin: 15px 0;        
+    text-align: left;      
+}
+
+.lista-info li {
+    color: var(--text-dim); 
+    margin-bottom: 10px;    
+    font-size: 0.95rem;
+}
+
+
+.lista-info li::marker {
+    color: var(--primary-color); 
+    font-size: 1.1rem;           
+}
+
+.footer {
+    width: 100%;
+    background-color: #0d121f; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 0 20px 0;
+    margin-top: 80px;
+}
+
+.container-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-section h2 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Estilo dos ícones */
+.contato-item i, .footer-section i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    width: 25px; 
+    text-align: center;
+}
+
+.contato-item p, .footer-section p {
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.contato-item a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contato-item a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+}
+
