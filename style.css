@@ -191,8 +191,7 @@ nav {
     font-size: 20px;
     color: var(--text-dim);
     margin-bottom: 20px;
-}   
-
+}
 /* 7. SEÇÃO OBJETIVOS */
 .objetivos {
     padding: 100px 0;
@@ -443,7 +442,7 @@ section {
     max-width: 500px; 
     width: 100%;
     text-align: left;
-
+    margin-top: 50px;
     
 }
 
@@ -556,4 +555,3 @@ section {
     color: rgba(255, 255, 255, 0.3);
     font-size: 0.8rem;
 }
-
